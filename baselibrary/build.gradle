@@ -1,0 +1,96 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        //使用asXxx方法时必须，传入你依赖的RxJava版本
+                        rxhttp_rxjava: '3.1.4',
+                        rxhttp_package: 'rxhttp',  //指定RxHttp类包名，可随意指定
+                ]
+            }
+        }
+    }
+
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+
+
+
+}
+
+dependencies {
+    api 'androidx.appcompat:appcompat:1.6.0'
+    api 'com.google.android.material:material:1.8.0'
+
+    // rxhttp请求
+    def rxhttp_version = '3.0.1'
+    api "com.github.liujingxing.rxhttp:rxhttp:$rxhttp_version"
+    // ksp/kapt/annotationProcessor choose one
+    annotationProcessor "com.github.liujingxing.rxhttp:rxhttp-compiler:$rxhttp_version"
+
+    api "com.squareup.okhttp3:okhttp:4.10.0"
+    api "com.github.liujingxing.rxhttp:converter-fastjson:$rxhttp_version"
+
+    api 'io.reactivex.rxjava3:rxjava:3.1.5'
+    api 'io.reactivex.rxjava3:rxandroid:3.0.1'
+    api 'com.github.liujingxing.rxlife:rxlife-rxjava3:2.2.2' //RxJava3, Automatic close request
+
+
+    //rx系列与View生命周期同步
+    api "com.trello.rxlifecycle2:rxlifecycle:2.2.2"
+    api "com.trello.rxlifecycle2:rxlifecycle-components:2.2.2"
+
+
+    //Google LiveData和ViewModel组件
+    api "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.2.0"
+
+    // eventbus
+    api 'org.greenrobot:eventbus:3.2.0'
+
+    // 状态栏
+    api 'com.geyifeng.immersionbar:immersionbar:3.2.2'
+
+    //图片加载框架
+    api 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+}
