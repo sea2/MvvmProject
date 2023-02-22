@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -43,7 +42,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.e(TAG,"onDestroy");
+        LogUtils.logi(TAG,"onDestroy");
         //解除Messenger注册
         if (bindingView != null) {
             bindingView.unbind();

@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.mvvmproject.databinding.ActivityMainBinding;
+import com.example.viewpage.Viewpage2Activity;
 import com.gyf.immersionbar.ImmersionBar;
 import com.sea.baselibrary.base.BaseActivity;
 
@@ -39,11 +40,17 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,ViewPagerView
         Log.e("123","2-------");
         viewModel.getData();
         Log.e("123","3-------");
+
+
+
     }
 
 
     public void jump(View v) {
         startActivity(StatusBarActivity.class);
+    }
+    public void Viewpage2Activity(View v) {
+        startActivity(Viewpage2Activity.class);
     }
 
     @Override
