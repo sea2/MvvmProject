@@ -7,6 +7,7 @@ import com.example.mvvmproject.databinding.ActivityMainBinding;
 import com.example.viewpage.Viewpage2Activity;
 import com.gyf.immersionbar.ImmersionBar;
 import com.sea.baselibrary.base.BaseActivity;
+import com.sea.baselibrary.base.view.CommonBottomDialog;
 
 import androidx.lifecycle.Observer;
 
@@ -40,6 +41,15 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,ViewPagerView
         Log.e("123","2-------");
         viewModel.getData();
         Log.e("123","3-------");
+
+
+        CommonBottomDialog mCommonBottomDialog=new CommonBottomDialog(MainActivity.this, null, new CommonBottomDialog.ItemListener() {
+            @Override
+            public void callBack(int position) {
+
+            }
+        });
+        mCommonBottomDialog.show();
 
 
 
