@@ -4,7 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-import rxhttp.wrapper.utils.Utils;
+import com.sea.baselibrary.base.manager.AppManager;
+import com.sea.baselibrary.base.net.RxHttpManager;
 
 /**
  * Created by lhy on 2023/2/21.

@@ -6,8 +6,10 @@ import android.view.View;
 import com.example.mvvmproject.databinding.ActivityMainBinding;
 import com.example.viewpage.Viewpage2Activity;
 import com.gyf.immersionbar.ImmersionBar;
+import com.lxj.xpopup.XPopup;
 import com.sea.baselibrary.base.BaseActivity;
 import com.sea.baselibrary.base.view.CommonBottomDialog;
+import com.sea.baselibrary.base.view.CustomPopup;
 
 import androidx.lifecycle.Observer;
 
@@ -58,6 +60,11 @@ public class MainActivity extends BaseActivity<ActivityMainBinding,ViewPagerView
 
     public void jump(View v) {
         startActivity(StatusBarActivity.class);
+    }
+    public void bottomPopup(View v) {
+        new XPopup.Builder(this)
+                .asCustom(new CustomPopup(this))
+                .show();
     }
     public void Viewpage2Activity(View v) {
         startActivity(Viewpage2Activity.class);

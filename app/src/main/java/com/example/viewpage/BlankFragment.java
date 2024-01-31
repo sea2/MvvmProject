@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.example.mvvmproject.R;
 import com.example.mvvmproject.ViewPagerViewModel;
 import com.example.mvvmproject.databinding.FragmentBlankBinding;
-import com.sea.baselibrary.base.LogUtils;
+import com.sea.baselibrary.base.util.LogUtils;
 
 import androidx.fragment.app.Fragment;
 

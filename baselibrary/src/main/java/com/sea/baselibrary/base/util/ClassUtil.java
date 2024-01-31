@@ -1,4 +1,4 @@
-package com.sea.baselibrary.base;
+package com.sea.baselibrary.base.util;
 
 
 import java.lang.reflect.ParameterizedType;

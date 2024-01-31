@@ -5,12 +5,14 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 
+import com.sea.baselibrary.base.util.ClassUtil;
+import com.sea.baselibrary.base.util.LogUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import androidx.annotation.LayoutRes;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
 
 /**
@@ -95,7 +97,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     private void initViewModel() {
         Class<VM> viewModelClass = ClassUtil.getViewModel(this);
         if (viewModelClass != null) {
-            this.viewModel = ViewModelProviders.of(this).get(viewModelClass);
+            this.viewModel = new ViewModelProvider(this).get(viewModelClass);
         }
     }
 

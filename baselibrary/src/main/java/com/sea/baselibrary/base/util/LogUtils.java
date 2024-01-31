@@ -1,7 +1,9 @@
-package com.sea.baselibrary.base;
+package com.sea.baselibrary.base.util;
 
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.sea.baselibrary.BuildConfig;
 
 /**
  * 日志相关
@@ -9,8 +11,8 @@ import android.util.Log;
 
 public class LogUtils {
 
-    public static boolean flag = true;
-private static String TAG="app_log";
+    public static boolean flag = BuildConfig.DEBUG;
+    private static String TAG="app_log";
     /**
      * Debug日志
      *

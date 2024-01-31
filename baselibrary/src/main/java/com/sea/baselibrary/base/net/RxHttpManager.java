@@ -1,8 +1,11 @@
-package com.sea.baselibrary.base;
+package com.sea.baselibrary.base.net;
 
 
 import android.app.Application;
 import android.os.Build;
+
+import com.sea.baselibrary.base.BaseApplication;
+import com.sea.baselibrary.base.util.AppUtils;
 
 import java.io.File;
 import java.util.concurrent.TimeUnit;

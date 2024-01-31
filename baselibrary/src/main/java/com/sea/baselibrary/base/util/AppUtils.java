@@ -1,4 +1,4 @@
-package com.sea.baselibrary.base;
+package com.sea.baselibrary.base.util;
 
 import android.app.Activity;
 import android.app.ActivityManager;

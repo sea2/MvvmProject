@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.example.mvvmproject.R;
-import com.sea.baselibrary.base.ClassUtil;
+import com.sea.baselibrary.base.util.ClassUtil;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.AndroidViewModel;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
 /**
  * Created by lhy on 2023/2/22.
@@ -96,7 +96,7 @@ public abstract class BaseFragment<SV extends ViewDataBinding,VM extends Android
     private void initViewModel() {
         Class<VM> viewModelClass = ClassUtil.getViewModel(this);
         if (viewModelClass != null) {
-            this.viewModel = ViewModelProviders.of(this).get(viewModelClass);
+            this.viewModel = new ViewModelProvider(this).get(viewModelClass);
         }
     }
 

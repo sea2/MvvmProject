@@ -7,7 +7,7 @@ import com.example.mvvmproject.R;
 import com.example.mvvmproject.ViewPagerViewModel;
 import com.example.mvvmproject.databinding.FragmentItemBinding;
 import com.example.viewpage.placeholder.PlaceholderContent;
-import com.sea.baselibrary.base.LogUtils;
+import com.sea.baselibrary.base.util.LogUtils;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
